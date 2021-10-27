@@ -1,0 +1,28 @@
+
+.mode-picker {
+    max-width: 375px;
+    width: 100%;
+    z-index: 4;
+    background-color: var(--moreDark);
+    border-radius: 31.5px;
+    display: flex;
+    padding: .5em;
+    
+    .option {
+        flex: 1;
+        text-align: center;
+        padding: 1em;
+        border-radius: 31.5px;
+        cursor: pointer;
+        color: #D7E0FF;
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    .active {
+        background-color: #F87070;
+        color: #1E213F;
+        
+    }
+    
+}

@@ -1,0 +1,49 @@
+
+.inputs {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 0;
+    border-bottom: 2px solid var(--gray);
+
+    .input {
+        p {margin-bottom: 8px;}
+            
+        input {
+            width: 140px;
+            height: 48px;
+            border: none;
+            outline: none;
+            background: var(--gray);
+            border-radius: 10px;
+            font-weight: bold;
+            padding: 0 35px 0 15px;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+
+        .arrows-div {
+            position: absolute;
+        }
+        .arrows {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            top: -38px;
+            right: -110px;
+        }
+        .arrows svg {
+            margin: 4px 0;
+            cursor: pointer;
+        }
+        .arrows svg:hover path{
+            stroke-opacity: 1;
+        } 
+
+    }
+}

@@ -7,7 +7,41 @@
     box-sizing: border-box;
 }
 
+:root {
+    --tomato:#F87070;
+    --elBlue: #70F3F8;
+    --magneta: #D881F8;
+    --mouse: #D7E0FF;
+    --dark: #1E213F;
+    --moreDark: #161932;
+    --gray: #EFF1FA;
+    --white: #FFFFFF;
+}
+
 
 // font-family: 'Kumbh Sans', sans-serif;
 // font-family: 'Roboto', sans-serif;
 // font-family: 'Space Mono', monospace;
+
+body {
+    font-family: 'Kumbh Sans', sans-serif;
+    color: var(--moreDark);
+}
+
+
+.App {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--dark);
+
+    h1 {
+        margin-bottom: 60px;
+    }
+
+    .setting {
+        cursor: pointer;
+    }
+}
