@@ -14,12 +14,14 @@ import Setup from './Components/Setup/Setup';
 function App() {
   const [isActive, setIsActive] = useState('pomodoro');
   const [setupModalIsUp, setSetupModalIsUp] = useState(false);
+  const [minutes, setMinutes] = useState(1);
+
 
   return (
     <div className="App">
       <img src={logo} alt='logo'/>
       <ModePicker isActive={isActive} setIsActive={setIsActive} />
-      <Timer />
+      <Timer minutes={minutes} />
       <img 
       className='setting' 
       src={settingIcon} 

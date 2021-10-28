@@ -18,3 +18,5 @@ export const MODAL_STYLE = {
         borderRadius: '25px'
     }
 }
+
+

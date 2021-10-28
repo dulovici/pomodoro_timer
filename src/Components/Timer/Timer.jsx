@@ -1,31 +1,37 @@
 import { useState } from "react";
-import { CircularProgressbarWithChildren, buildStyles } from "react-circular-progressbar";
+import { CircularProgressbarWithChildren} from "react-circular-progressbar";
 import 'react-circular-progressbar/dist/styles.css';
+import { secToTime } from "../../Tools/tools";
 import "./timer.scss";
 
+let interval;
 
-function Timer() {
+
+function Timer(props) {
+const {minutes} = props;
+
 const [isRuning, setIsRuning] = useState(false);
 const [value, setValue] = useState(0);
+const [seconds, setSeconds] = useState(minutes * 60)
 
-let interval;
+
 
 const startTimer = (minutes)=> {
   const seconds = minutes * 60;
   const incrementer = 100 / seconds;
-  
+
 
     if(!isRuning) {
     interval = setInterval(()=>{
         setValue((prev)=> prev + incrementer);
+        setSeconds((prev) => prev - 1);
     },1000);
-
     return 
   }
-    
     return clearInterval(interval)
-
 } 
+
+
 
 
   return (
@@ -52,10 +58,10 @@ const startTimer = (minutes)=> {
           fontSize: 100, 
           marginBottom: 5, 
           color: "#EFF1FA", 
-          fontFamily: `Kumbh Sans`}}>17:59</h1>
+          fontFamily: `Kumbh Sans`}}>{secToTime(seconds)}</h1>
         <p 
         onClick={()=> {
-          startTimer(1)
+          startTimer(minutes)
           setIsRuning(!isRuning)
         }}
         style={{ 
