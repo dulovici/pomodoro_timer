@@ -1,16 +1,37 @@
+import { useState } from "react";
 import { CircularProgressbarWithChildren, buildStyles } from "react-circular-progressbar";
 import 'react-circular-progressbar/dist/styles.css';
 import "./timer.scss";
 
 
-
-
 function Timer() {
+const [isRuning, setIsRuning] = useState(false);
+const [value, setValue] = useState(0);
+
+let interval;
+
+const startTimer = (minutes)=> {
+  const seconds = minutes * 60;
+  const incrementer = 100 / seconds;
   
+
+    if(!isRuning) {
+    interval = setInterval(()=>{
+        setValue((prev)=> prev + incrementer);
+    },1000);
+
+    return 
+  }
+    
+    return clearInterval(interval)
+
+} 
+
+
   return (
     <div className='timer'>
        <CircularProgressbarWithChildren
-        value={50}
+        value={value}
         background
         strokeWidth={4}
         backgroundPadding={4}
@@ -32,11 +53,17 @@ function Timer() {
           marginBottom: 5, 
           color: "#EFF1FA", 
           fontFamily: `Kumbh Sans`}}>17:59</h1>
-        <p style={{ 
+        <p 
+        onClick={()=> {
+          startTimer(1)
+          setIsRuning(!isRuning)
+        }}
+        style={{ 
+          cursor: 'pointer',
           letterSpacing: 6, 
           fontWeight:700,  
           color: "#EFF1FA",  
-          fontFamily: `Kumbh Sans`}}>PAUSE</p>
+          fontFamily: `Kumbh Sans`,}}>{isRuning?'PAUSE':'PLAY'}</p>
        </CircularProgressbarWithChildren>
     </div>
   );
