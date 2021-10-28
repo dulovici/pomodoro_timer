@@ -9,7 +9,7 @@ export const MODAL_STYLE = {
     content: {
         padding: 0,
         position: 'absolute',
-        minHeight: '60%',
+        minHeight: '80%',
         width: '730px',
         left: '50%',
         top: '50%',

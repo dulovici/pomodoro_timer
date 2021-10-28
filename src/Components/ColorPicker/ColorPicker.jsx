@@ -1,11 +1,11 @@
 
-import React, {useState} from 'react';
+import React from 'react';
 import './colorPicker.scss';
 
 function ColorPicker() {
-    const [checked, setChecked] = useState('c1')
+    // const [checked, setChecked] = useState('c1')
 
-    
+
 
     return (
         <div className="colors">

@@ -1,5 +1,7 @@
 
 .setup {
+    position: relative;
+
 
     header {
         display: flex;
@@ -74,6 +76,24 @@
 
             
         }
+    }
+
+    .apply {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 140px;
+        height: 53px;
+        margin: 0 auto;
+        background-color: var(--tomato);
+        border-radius: 26.5px;
+        cursor: pointer;
+        font-weight: 700;
+        color: var(--white);
+
+    }
+    .apply:hover {
+        background-color: #df5050;
     }
 
 
